@@ -1,0 +1,49 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+}
+h1{
+    text-align: center;
+    margin: 20px;
+}
+.error{
+    display: hidden;
+    color:red;
+}
+.hide{
+    display: none;
+}
+.success{
+    color: green;
+}
+.container{
+    margin : 10% auto;
+    border: 1px solid black;
+    padding: 25px;
+    width:35%;
+    height:50%;
+    box-shadow: 2px 2px 5px black;
+}
+input{
+    width:70%;
+    height:30px;
+    padding: 5px;
+    border-radius: 5px;
+}
+#form1{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 100%;
+    gap:15px;
+}
+button{
+    width:100px;
+    cursor: pointer;
+    background-color: aliceblue;
+}
