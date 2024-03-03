@@ -30,6 +30,8 @@ document.addEventListener('change',(e)=>{
     }
 })
 let successMsg =  document.querySelector('.success');
+let invEmail = document.querySelector('.invalid_email');
+let invPass = document.querySelector('.invalid_password');
 document.addEventListener('input',(e)=>{ //min 4 char, '@ 'and '.'
     let valid =true;
     if(e.target.id=='password'){
@@ -53,8 +55,6 @@ document.addEventListener('input',(e)=>{ //min 4 char, '@ 'and '.'
         }else valid=true;
     }
     if(valid){
-        let invEmail = document.querySelector('.invalid_email');
-        let invPass = document.querySelector('.invalid_password');
         invEmail.classList.add('hide');
         invPass.classList.add('hide');
         successMsg.classList.remove('hide');
@@ -65,12 +65,14 @@ document.addEventListener('input',(e)=>{ //min 4 char, '@ 'and '.'
 let form = document.getElementById('form1');
 form.addEventListener('submit',(e)=>{
     e.preventDefault();
-    let response = window.confirm('Are you sure you want to submit form');
-    if(response){
-        successMsg.classList.add('hide');
-        signup.email='';
-        signup.password='';
-        alert("Successful signup!");
-        form.reset();   
+    if(invEmail.classList.contains('hide') && invPass.classList.contains('hide')){
+        let response = window.confirm('Are you sure you want to submit form');
+        if(response){
+            successMsg.classList.add('hide');
+            signup.email='';
+            signup.password='';
+            alert("Successful signup!");
+            form.reset();   
+        }
     }
 })
